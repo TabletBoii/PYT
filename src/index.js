@@ -1,17 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import './index.css';
+import { MemoryRouter, Route, Routes} from "react-router-dom";
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+import ChooseATour from "./pages/choose-a-tour/choose-a-tour";
+import AdminPanelAuth from "./pages/admin-panel/admin-panel-auth";
+import AppPanel from "./pages/appPanel/app-panel";
+import BackComponent from './pages/backButton/back'
+
+render(
+      <MemoryRouter >
+        <BackComponent/>
+        <Routes>
+          <Route path="/" element={<App />}/>
+          <Route path="choose-a-tour" element={<ChooseATour />} />
+          <Route path="admin-panel" element={<AdminPanelAuth />} />
+          <Route path="app-panel" element={<AppPanel />} />
+        </Routes>
+      </MemoryRouter>
+    ,
+    document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

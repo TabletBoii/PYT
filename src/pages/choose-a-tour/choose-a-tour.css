@@ -1,0 +1,138 @@
+.body{
+
+}
+
+.TourAgent{
+    position: absolute;
+    width: 166px;
+    height: 36px;
+    left: 90px;
+    top: 48px;
+
+    font-family: 'Sofia Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.TourAgentInput{
+    position: absolute;
+    width: 550px;
+    height: 63px;
+    left: 90px;
+    top: 96px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Where{
+    position: absolute;
+    width: 84px;
+    height: 36px;
+    left: 90px;
+    top: 171px;
+
+    font-family: 'Sofia Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.WhereInput{
+    position: absolute;
+    width: 550px;
+    height: 63px;
+    left: 90px;
+    top: 219px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Period{
+    position: absolute;
+    width: 265px;
+    height: 36px;
+    left: 90px;
+    top: 294px;
+
+    font-family: 'Sofia Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+}
+
+.PeriodInput{
+    position: absolute;
+    width: 550px;
+    height: 63px;
+    left: 90px;
+    top: 342px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Hotel{
+    position: absolute;
+    width: 115px;
+    height: 36px;
+    left: 90px;
+    top: 417px;
+
+    font-family: 'Sofia Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.HotelInput{
+    position: absolute;
+    width: 550px;
+    height: 63px;
+    left: 90px;
+    top: 465px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.palmTreeImg{
+    position: absolute;
+    width: 878px;
+    height: 871px;
+    left: 401px;
+    top: 0px;
+    opacity: 0.2;
+    z-index: -1;
+}

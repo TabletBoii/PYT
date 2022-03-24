@@ -1,0 +1,23 @@
+.returnArrow{
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    left: 10px;
+    top: 20px;
+
+    box-sizing: border-box;
+    transform: rotate(0deg);
+}
+
+.right {
+    border: solid black;
+    border-radius: 10px;
+    border-width: 0 10px 10px 0;
+    margin-left: 20px;
+    margin-top: 60px;
+
+    display: inline-block;
+    padding: 1px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
