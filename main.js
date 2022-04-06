@@ -2,7 +2,7 @@ const { app, BrowserWindow } = require("electron")
 
 
 const path = require("path");
-//sqlConnection.then(r => console.log(r))
+
 const isDev = require("electron-is-dev");
 
 //Create separate BrowserWindow

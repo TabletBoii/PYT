@@ -1,0 +1,28 @@
+body{
+    width: 100%;
+}
+
+.chooseComponent{
+    position: absolute;
+    width: 344px;
+    height: 349px;
+    left: 77px;
+    top: 221px;
+}
+
+.adminComponent{
+    position: absolute;
+    width: 340px;
+    height: 338px;
+    left: 472px;
+    top: 232px;
+}
+
+.appComponent{
+    position: absolute;
+    width: 340px;
+    height: 338px;
+    left: 863px;
+    top: 227px;
+}
+

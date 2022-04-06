@@ -1,20 +1,27 @@
 import './App.css';
-import React from 'react'
-import {Link} from "react-router-dom";
-import chooseComponent from './res/chooseComponent.png'
-import adminComponent from './res/adminComponent.png'
-import appComponent from './res/appComponent.png'
+import {MemoryRouter, Route, Routes} from "react-router-dom";
+
+import BackComponent from "./pages/backButton/back";
+import ChooseATour from "./pages/choose-a-tour/choose-a-tour";
+import AdminPanelAuth from "./pages/admin-panel/admin-panel-auth";
+import AppPanel from "./pages/appPanel/app-panel";
+import Homepage from './pages/homepage/Homepage'
+import AdminPanel from "./pages/admin-panel/admin-panel";
 
 
 
 function App() {
   return (
       <>
-        <nav>
-          <Link to="/choose-a-tour"><input type="image" className="chooseComponent" src={chooseComponent} alt="chooseComponent"/></Link>
-          <Link to="/admin-panel"><input type="image" className="adminComponent" src={adminComponent} alt="adminComponent"/></Link>
-          <Link to="/app-panel"><input type="image" className="appComponent" src={appComponent} alt="error"/></Link>
-        </nav>
+        <MemoryRouter >
+          <BackComponent/>
+          <Routes>
+            <Route path="/" exact element={<Homepage />}/>
+            <Route path="/choose-a-tour" exact element={<ChooseATour />} />
+            <Route path="/app-panel" exact element={<AppPanel />} />
+            <Route path="/admin-panel-auth" exact element={<AdminPanelAuth />}/>
+          </Routes>
+        </MemoryRouter>
       </>
   );
 }
