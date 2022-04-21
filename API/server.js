@@ -1,8 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const expressWinston = require("express-winston")
-const winston = require("winston");
+const cookie = require('cookie-parser')
 const routes = require('./routes/auth.route')
 const dataRoute = require('./routes/data.route')
 

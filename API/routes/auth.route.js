@@ -23,4 +23,16 @@ router.post(
     authController.logIn
 )
 
+router.post(
+    '/admin/logout',
+
+    authController.logout
+)
+
+router.post(
+    '/admin/refresh',
+
+    authController.refresh
+)
+
 module.exports = router

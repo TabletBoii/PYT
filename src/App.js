@@ -8,6 +8,9 @@ import AppPanel from "./pages/appPanel/app-panel";
 import Homepage from './pages/homepage/Homepage'
 import AdminPanel from "./pages/admin-panel/admin-panel";
 
+import React from "react";
+import TourAgentPage from "./pages/appPanel/pages/TouropMenu/touragent-page";
+
 
 
 function App() {
@@ -16,10 +19,13 @@ function App() {
         <MemoryRouter >
           <BackComponent/>
           <Routes>
-            <Route path="/" exact element={<Homepage />}/>
-            <Route path="/choose-a-tour" exact element={<ChooseATour />} />
-            <Route path="/app-panel" exact element={<AppPanel />} />
-            <Route path="/admin-panel-auth" exact element={<AdminPanelAuth />}/>
+            <Route path="/" element={<Homepage />}/>
+            <Route path="/choose-a-tour" element={<ChooseATour />} />
+            <Route path="/app-panel" element={<AppPanel />} />
+            <Route path="/admin-panel/*" element={<AdminPanel/>}/>
+
+            <Route path="/admin-panel-auth" element={<AdminPanelAuth />}/>
+
           </Routes>
         </MemoryRouter>
       </>

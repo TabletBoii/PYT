@@ -1,39 +1,79 @@
 import React, {PureComponent, useEffect, useState} from 'react';
 import './choose-a-tour.css'
-import palmTreeImg from '../../res/samples/1859-Martinique.web.jpg'
 
+import Flatpickr from 'react-flatpickr'
+import "flatpickr/dist/themes/material_red.css"
+import axios from "axios";
 
 
 export default function ChooseATour() {
 
-  const [state, setState] = useState([])
+
+  //Select Country
+  const [country, setCountry] = useState([])
+  const [countryValue, setCountryValue] = useState('')
+
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    try{
+      /*await axios.post('http://localhost:8080/getinfo/pt/app/', {
+        firstname,
+        secondname,
+        patronymic,
+        address,
+        selectedDate,
+        telephone
+      });*/
+    }
+    catch (e) {
+      console.log(e.message)
+    }
+  }
 
   useEffect(()=>{
-    fetch('http://localhost:8080/getinfo/pt/tours').then(response=>response.json()).then(response=>setState(response))
-  })
+    fetch('http://localhost:8080/getinfo/pt/counties/').then(response=>response.json()).then(response=>setCountry(response))
+  },[])
+
+
+  //Select Date
+  const [selectedDate, setSelectedDate] = useState(null)
 
 
 return(
     <div>
-      <div className="TourAgent">Турагент:</div>
-        <input type="text" className="TourAgentInput" list="data1"/>
-        <datalist id="data1">
-          {
-            state.map(result => {
-              return (<option key={result.touragentname}>{result.touragentname}</option>)
-            })
-          }
-        </datalist>
+      <form onSubmit={handleSubmit}>
+        <div >
+          <table className="categories">
+            <tr>
+              <td>
+                <input type="text" className="TourAgentInput" list="data1" onChange={event => setCountryValue(event.target.value)} placeholder="Выберите страну:"/>
+                <datalist id="data1" >
+                  {
+                    country.map(result => {
+                      return (<option key={result.countryname} className="TourAgentDatalist">{result.countryname}</option>)
+                    })
+                  }
+                </datalist>
+              </td>
+              <td>
+                <Flatpickr
+                    placeholder="Дата вылета:"
+                    className="WhenInput"
+                    selected={selectedDate}
+                    onChange={date=>setSelectedDate(date)}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colSpan="2">
+                <input type="submit" name="submit" className="searchTourSubmit" value="Найти"/>
+              </td>
+            </tr>
+          </table>
+        </div>
 
-        <div className="Where">Куда:</div>
-        <input type="text" className="WhereInput"/><img/>
-        <div className="Period">Период вылета:</div>
-        <input type="text" className="PeriodInput"/><img/>
-        <div className="Hotel">Отель:</div>
-        <input type="text" className="HotelInput"/><img/>
+      </form>
 
-
-        <img src={palmTreeImg} className="palmTreeImg"/>
     </div>
 )
 
