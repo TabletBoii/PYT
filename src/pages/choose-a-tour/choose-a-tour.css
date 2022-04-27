@@ -62,3 +62,7 @@
     opacity: 0.2;
     z-index: -1;
 }
+
+.tourListItem{
+    margin-top: 20px;
+}

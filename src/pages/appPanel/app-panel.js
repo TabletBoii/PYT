@@ -4,7 +4,10 @@ import './app-panel.css'
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/material_red.css"
 import axios from "axios";
+import {css} from "glamor";
+import { ToastContainer, toast } from 'react-toastify'
 
+toast.configure()
 export default function AppPanel() {
 
   const [selectedDate, setSelectedDate] = useState(null)
@@ -13,6 +16,8 @@ export default function AppPanel() {
   const [patronymic, setPatronymic] = useState('')
   const [address, setAddress] = useState('')
   const [telephone, setTelephone] = useState('')
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,19 +30,48 @@ export default function AppPanel() {
           selectedDate,
           telephone
       });
+        toast.success('Заявка успешно создана', {
+          draggable: true,
+          position: toast.POSITION.TOP_RIGHT
+        })
+
     }
     catch (e) {
       console.log(e.message)
+      if(e.message === 'Request failed with status code 409'){
+        toast.error('Такой пользователь уже существует', {
+          className:css({
+            background: "#00FF00 !important",
+            color: "yellow !important",
+            fontWeight: "bold"
+          }),
+          draggable: true,
+          position: toast.POSITION.TOP_RIGHT
+        })
+      }
+      else{
+        toast.error('Ошибка соединения', {
+          className:css({
+            background: "#00FF00 !important",
+            color: "yellow !important",
+            fontWeight: "bold"
+          }),
+          draggable: true,
+          position: toast.POSITION.TOP_RIGHT
+        })
+      }
+
     }
 
   }
 
 
   return(
-      <div>
-        <div className="labelText">Оставить заявку</div>
+      <div className="appClass">
         <div className="applicationForm">
-          <form onSubmit={handleSubmit}>
+
+          <form onSubmit={handleSubmit} className="appForm">
+            <h3>Оставьте заявку и мы с вами свяжемся</h3>
             <label className="label">Имя</label>
             <input className="input"
                    type="text"

@@ -8,6 +8,11 @@ body{
     height: 349px;
     left: 77px;
     top: 221px;
+    transition: transform 100ms ease-in-out 25ms;
+}
+
+.chooseComponent:hover{
+    transform: translateX(20px) translateY(20px);
 }
 
 .adminComponent{
@@ -16,6 +21,11 @@ body{
     height: 338px;
     left: 472px;
     top: 232px;
+    transition: transform 100ms ease-in-out 25ms;
+}
+
+.adminComponent:hover{
+    transform: translateX(20px) translateY(20px);
 }
 
 .appComponent{
@@ -24,5 +34,10 @@ body{
     height: 338px;
     left: 863px;
     top: 227px;
+    transition: transform 100ms ease-in-out 25ms;
+}
+
+.appComponent:hover{
+    transform: translateX(20px) translateY(20px);
 }
 

@@ -13,13 +13,13 @@ class AuthController{
       const {username, password} = req.body
       const candidate = await db.query('SELECT * FROM adminauth WHERE username=$1', [username])
       if(candidate.rows.length===0){
-        return res.status(401).json({message:username+' does not exists'})
+        return res.status(404).json({message:username+' does not exists'})
       }
 
       const userPassword = await db.query('SELECT password FROM adminauth WHERE username=$1', [username])
       const isMatch = await bcrypt.compare(password, userPassword.rows[0].password)
       if(!isMatch){
-        return res.status(401).json({message:"Wrong password, try again"})
+        return res.status(409).json({message:"Wrong password, try again"})
       }
 
       const adminID = await db.query('SELECT adminid FROM adminauth WHERE username=$1', [username])

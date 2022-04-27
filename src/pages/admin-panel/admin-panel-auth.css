@@ -1,89 +1,88 @@
-.usernameLabel{
-    position: absolute;
-    width: 234px;
-    height: 32px;
-    left: 523px;
-    top: 273px;
 
-    font-family: Sofia Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 36px;
 
-    color: #000000;
+.authForm{
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    margin: 15% auto;
+
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+.authForm *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+.authForm h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
 }
 
-.returnArrow{
-    position: absolute;
-    width: 60px;
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.authForm input{
+    display: block;
     height: 50px;
-    left: 10px;
-    top: 20px;
-
-    box-sizing: border-box;
-    transform: rotate(0deg);
+    width: 100%;
+    font-color: #000000;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
 }
 
-.usernameInput{
-    position: absolute;
-    width: 503px;
-    height: 96px;
-    left: 388px;
-    top: 322px;
-
-    font-family: Sofia Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 36px;
-
-    background: #FFFFFF;
-    border-radius: 20px;
+.authForm input[type="text"]{
+    background-color:#282c34;
+    color: white
 }
-.passwordLabel{
-    position: absolute;
-    width: 116px;
-    height: 32px;
-    left: 582px;
-    top: 488px;
 
-    font-family: Sofia Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 36px;
+.authForm input[type="text"] :focus{
+    background-color:#282c34;
+    color: black;
+}
 
+.authForm input[type="password"]{
+    background-color:#282c34;
+    color: white;
+}
+
+::placeholder{
+    color: #e5e5e5;
+}
+
+.authForm label{
     color: #000000;
 }
-.passwordInput{
-    position: absolute;
-    width: 503px;
-    height: 96px;
-    left: 388px;
-    top: 531px;
-
-    font-family: Sofia Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 36px;
-
-    background: #FFFFFF;
-    border-radius: 20px;
+.authForm h3{
+    color: #000000;
 }
 
-.submitButton{
-    font-family: Sofia Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 36px;
 
-    position: absolute;
-    width: 200px;
-    height: 80px;
-    left: 540px;
-    top: 670px;
-    border-radius: 20px;
+.authForm input[type="submit"]{
+    border: 1px solid #000000;
+    background-color: #FFFFFF;
+    color: #282c34;
+    margin-top:50px;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.authForm input[type="submit"]:hover{
+
+    background-color: #282c34;
+    color: #FFFFFF;
 }
